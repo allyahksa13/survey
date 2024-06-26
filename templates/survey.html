@@ -1,0 +1,238 @@
+<!-- survey.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #F0F8FF;
+        }
+
+        h2 {
+            text-align: center;
+            padding-bottom: 10px; /* Adjust the value as per your needs */
+        }
+
+        /* Example CSS styles */
+        .outer-container {
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Adjust spacing between form groups */
+        }
+
+        .form-control-label {
+            font-weight: bold; /* Make labels bold */
+        }
+
+        .form-control {
+            width: 70%; /* Make inputs fill their container */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .text-danger {
+            color: #dc3545; /* Red color for error messages */
+        }
+
+        /*.btn-primary {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }*/
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Impact of Extracurricular Activities on Student Well-being</h2>
+    <div class="outer-container">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                {{ form.name(class="form-control", id="name") }}
+                {% if form.name.errors %}
+                    <span class="text-danger">{{ form.name.errors[0] }}</span>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(class="form-control-label") }}
+                {{ form.email(class="form-control", id="email") }}
+                {% if form.email.errors %}
+                    <span class="text-danger">{{ form.email.errors[0] }}</span>
+                {% endif %}
+            </div>        
+            <div class="form-group">
+                <span class="bold-text">{{ form.level.label }}</span>
+                <br>
+                {% for subfield in form.level %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.level.errors %}
+                            <span class="text-danger">{{ form.level.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question.label }}</span>
+                <br>
+                {% for subfield in form.question %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question.errors %}
+                            <span class="text-danger">{{ form.question.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question2.label }}</span>
+                <br>
+                {% for subfield in form.question2 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question2.errors %}
+                            <span class="text-danger">{{ form.question2.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question3.label }}</span>
+                <br>
+                {% for subfield in form.question3 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question3.errors %}
+                            <span class="text-danger">{{ form.question3.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question4.label }}</span>
+                <br>
+                {% for subfield in form.question4 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question4.errors %}
+                            <span class="text-danger">{{ form.question4.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question5.label }}</span>
+                <br>
+                {% for subfield in form.question5 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question5.errors %}
+                            <span class="text-danger">{{ form.question5.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question6.label }}</span>
+                <br>
+                {% for subfield in form.question6 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question6.errors %}
+                            <span class="text-danger">{{ form.question6.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question7.label }}</span>
+                <br>
+                {% for subfield in form.question7 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question7.errors %}
+                            <span class="text-danger">{{ form.question7.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question8.label }}</span>
+                <br>
+                {% for subfield in form.question8 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question8.errors %}
+                            <span class="text-danger">{{ form.question8.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question9.label }}</span>
+                <br>
+                {% for subfield in form.question9 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question9.errors %}
+                            <span class="text-danger">{{ form.question9.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <span class="bold-text">{{ form.question10.label }}</span>
+                <br>
+                {% for subfield in form.question10 %}
+                    {{ subfield }} {{ subfield.label }}
+                    {% if loop.last %}
+                        {% if form.question10.errors %}
+                            <span class="text-danger">{{ form.question10.errors[0] }}</span>
+                        {% endif %}
+                    {% endif %}
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.feedback.label(class="form-control-label") }}
+                {{ form.feedback(class="form-control", id="feedback") }}
+            </div>        
+            <button type="submit" class="btn btn-primary" style="margin-top: 15px; margin-bottom: 15px; background-color:  #4B6F44;">Submit</button>
+    
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
